@@ -3,7 +3,7 @@
 namespace Dberry37388\Alerts;
 
 use Dberry37388\Alerts\Contracts\Alerts as AlertsContract;
-use Dberry37388\Alerts\Contracts\SessionStore;
+use Dberry37388\Alerts\Contracts\SessionStore as SessionStoreContract;
 use Illuminate\Support\Collection;
 
 /**
@@ -247,7 +247,7 @@ class Alerts extends Collection implements AlertsContract
 	/**
 	 * {@inheritDoc}
 	 */
-	public function setSession(SessionStore $session)
+	public function setSession(SessionStoreContract $session)
 	{
 		$this->session = $session;
 	}
