@@ -76,7 +76,7 @@ $alerts = Alerts::getError('pnotify');
 $errors = Alerts::whereType('errors')->whereInContainer('pnotify');
 ```
 
-You can also retrieve all alerts that are **not** of a specific type.
+You can also retrieve all alerts that are **not** of a specific type. You can pass either a string or an array here.
 
 ```
 $errors = Alerts::notError('errors');
@@ -100,4 +100,10 @@ To retrieve all alerts in a specific container with a specific type, just pass t
 ```
 $alerts = Alerts::whereNotification('info');
 $alerts = Alerts::whereInContainer('errors')->whereType('info');
+```
+
+To retrieve all alerts that are not in a specific container. You can pass either a string or an array here.
+
+```
+$alerts = Alerts::whereNotInContainer('validation');
 ```
