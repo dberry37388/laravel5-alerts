@@ -1,0 +1,23 @@
+{
+    "name": "dberry37388/laravel5-alerts",
+    "description": "Package for managing alerts (messages) in your Laravel 5 application. ",
+    "keywords": ["framework", "laravel", "support"],
+    "license": "MIT",
+    "homepage": "https://github.com/dberry37388/laravel5-alerts",
+    "authors": [
+        {
+            "name": "Daniel Berry",
+            "email": "me@danielberry.io",
+            "homepage": "http://blog.danielberry.io"
+        }
+    ],
+    "require": {
+        "dberry37388/laravel5-support": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dberry37388\\Alerts\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
