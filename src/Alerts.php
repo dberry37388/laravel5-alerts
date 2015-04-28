@@ -198,7 +198,7 @@ class Alerts extends Collection implements AlertsContract
 
 		list($message, $container, $flashable, $extras) = $this->parseParameters($parameters);
 
-		return $this->alert($method, $message, $container, $flashable, $extras);
+		return $this->alert($message, $method, $container, $flashable, $extras);
 	}
 
 	/**

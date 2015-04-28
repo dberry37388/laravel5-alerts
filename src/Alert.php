@@ -140,6 +140,21 @@ class Alert implements AlertContract
 	}
 
 	/**
+	 * Returns the type of alert.
+	 *
+	 * @return mixed
+	 */
+	public function getClass()
+	{
+		if ( $this->type == 'error')
+		{
+			return 'danger';
+		}
+
+		return $this->type;
+	}
+
+	/**
 	 * Checks to see if the message is flashable
 	 *
 	 * @return boolean

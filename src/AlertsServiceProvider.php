@@ -1,6 +1,6 @@
 <?php namespace Dberry37388\Alerts;
 
-use Dberry37388\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
 /**
  * Part of the Alerts package.
@@ -26,7 +26,7 @@ class AlertsServiceProvider extends ServiceProvider
 	 */
 	public function boot()
 	{
-		$this->package('dberry37388/alerts');
+		$this->package('dberry37388/alerts', 'dberry37388/alerts', __DIR__ . '/../');
 	}
 
 
@@ -62,9 +62,9 @@ class AlertsServiceProvider extends ServiceProvider
 	{
 		$this->app->singleton('dberry37388.alerts', function($app)
 		{
-			$sessionName = config('dberry37388-alerts.session_name');
+			$sessionName = config('dberry37388/alerts::session_name');
 
-			$items = $app['session']->pull($sessionName);
+			$items = $app['session.store']->pull($sessionName) ?: [];
 
 			$alerts = new Alerts($items);
 
